@@ -238,7 +238,8 @@ list.pushatEnd(2);
 list.pushatEnd(4);
 list.pushatEnd(5);
 list.printNodes();
-console.log(JSON.stringify(list))
-list.removeDuplicates();
-
+// console.log(JSON.stringify(list))
+// list.removeDuplicates();
+list.reverse();
+list.printNodes()
 console.log(JSON.stringify(list))
