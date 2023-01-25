@@ -1,5 +1,5 @@
 
-let numberArray=[3,6,7,1,5,9,71,8]
+let numberArray=[0,6,7,1,5,9,71,8]
 
 function getMinMax(arr,n){
     let minMax=new Array();

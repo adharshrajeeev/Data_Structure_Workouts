@@ -10,4 +10,13 @@ function recursion(x){
 }
 
 
-recursion(19)
+function logFunction(n){
+    if(n==0) return 1
+
+    n=Math.floor(n/2);
+    console.log(n)
+    logFunction(n);
+}
+
+
+console.log(logFunction(4))
