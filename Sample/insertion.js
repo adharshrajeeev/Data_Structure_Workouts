@@ -97,8 +97,5 @@ list.insertNodeAtLast(1000)
 // list.reverseLinkedList();
 
 list.printNodes();
-list.removeAtend();
-list.removeAtend();
-list.removeAtend();
-list.printNodes();
+list.reverseLinkedList();
 // console.log(list.reverseLinkedList())

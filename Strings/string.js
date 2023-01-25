@@ -16,3 +16,6 @@ function replaceAlphabets(str, n) {
 
 
  console.log(replaceAlphabets(name1,2))
+
+
+ 
