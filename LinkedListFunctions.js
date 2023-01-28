@@ -139,6 +139,25 @@ class SingleLinkedList{
 
     }
 
+
+    removeElement(value){
+        if(!this.head)  return null;
+
+        let current=this.head;
+        let previous=null;
+
+        while(current.data!=value){
+            previous=current;
+            current=current.next
+        }
+
+        previous.next=current.next;
+        this.size--;
+        return;
+    }
+
+    
+
     
 }
 
@@ -147,9 +166,6 @@ const list=new SingleLinkedList();
 list.insertAtend(1);
 list.insertAtend(2);
 list.insertAtend(3);
-list.insertAtend(4);
-list.insertAtend(5);
-list.insertAtend(6);
 // list.popAtBegining();
 // list.insertAtFirst(0);
 // list.insertAtFirst(-1)
@@ -157,4 +173,8 @@ list.insertAtend(6);
 
 console.log(JSON.stringify(list))
 
-console.log(list.getElement(5))
+var arr=[4,5,6]
+for(var i=0;i<arr.length;i++){
+    list.insertAtend(arr[i])
+}
+console.log(JSON.stringify(list))
