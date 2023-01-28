@@ -65,6 +65,81 @@ class SingleLinkedList{
         this.size--;
         return this;
     }
+
+
+    popAtPosition(index){
+
+        if(index <  0 || index >this.size ) return null
+
+        if(index==0) return this.popAtBegining();
+
+        if(index==this.size-1) return this.popAtEnd();
+
+        var current=this.head;
+        var previous=null;
+        var counter=0;
+        while(counter!=index){
+            previous=current;
+            current=current.next;
+            counter++
+        }
+        previous.next=current.next;
+        this.size--;
+        return this;
+       
+       
+    }
+
+    pushAtPosition(index,data){
+        if(index <  0 || index >this.size ) return null
+
+        if(index == 0) return this.insertAtFirst(data);
+
+        if(index == this.size-1) return this.insertAtend(data);
+
+        let current=this.head;
+        let previous=null;
+        let counter=0;
+        while(counter!=index){
+            previous=current;
+            current=current.next;
+            counter++;
+        }
+        const newNode=new Node(data);
+        previous.next=newNode;
+        newNode.next=current
+        this.size++;
+    }
+
+    findMiddle(){
+        let current=this.head;
+        let count=0
+        while(current.next){
+            let middle=Math.floor(this.size/2);
+            if(count ==  middle){
+                return current.data
+            }
+            current=current.next;
+            count++
+
+        }
+        return -1
+    }
+
+    getElement(value){
+        var current=this.head;
+        while(current.next){
+            if(current.data == value){
+                return current
+            }
+            current=current.next
+        }
+
+        return -1
+
+    }
+
+    
 }
 
 
@@ -73,7 +148,13 @@ list.insertAtend(1);
 list.insertAtend(2);
 list.insertAtend(3);
 list.insertAtend(4);
-list.popAtBegining();
+list.insertAtend(5);
+list.insertAtend(6);
+// list.popAtBegining();
 // list.insertAtFirst(0);
 // list.insertAtFirst(-1)
+
+
 console.log(JSON.stringify(list))
+
+console.log(list.getElement(5))
