@@ -2,13 +2,10 @@
 let num=5;
 
 function factoriall(num){
-    if(num ==  0){ return 1}
-    else{
+    if(num ==  0) return 1
+   
 
         return num * factoriall(num-1);
-    }
+    
 }
-
-const resul=factoriall(num);
-
-console.log(resul)
+console.log(factoriall(num))
