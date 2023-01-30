@@ -32,8 +32,6 @@ class Queue{
         if(this.first ==  this.last){
             this.last=null
         }
-
-        let current=this.first;
         this.first=this.first.next
         this.size--;
         return this
