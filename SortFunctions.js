@@ -51,6 +51,9 @@ function insertionSort(arr){
 // console.log(insertionSort(newArray))
 
 const merge=(arr1,arr2)=>{
+    console.log(arr1,"array 1");
+    console.log(arr2,"array 2");
+    console.log("<====================>")
     let result=[];
     let i=0;
     let j=0;
@@ -82,9 +85,30 @@ function mergeSort(arr){
 
     let middle=Math.floor(arr.length/2);
     let left=mergeSort(arr.slice(0,middle));
+    console.log(left,"left array")  
     let right=mergeSort(arr.slice(middle));
-
+    console.log(right,"right array")  
+    
     return merge(left,right)
 }
 
-console.log(mergeSort([1]))
+// console.log(mergeSort([2,4,1,3]),"FINAL ARRAY")
+
+
+function quickSort(arr){
+
+}
+
+
+function pivotHelper(arr,start=0,end=arr.length+1){
+   var pivot=arr[start];
+    var swapIndx = start;
+    for(var i=start+1;i<arr.length;i++){
+        if(pivot > arr[i]){
+            swapIndx++;
+            
+        }
+    }
+}
+
+console.log(pivotHelper([5,7,1,3,4]))
