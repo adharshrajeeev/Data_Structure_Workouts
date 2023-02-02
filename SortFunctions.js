@@ -95,20 +95,38 @@ function mergeSort(arr){
 // console.log(mergeSort([2,4,1,3]),"FINAL ARRAY")
 
 
+
+
+// function pivotHelper(arr,start=0,end=arr.length+1){
+//     var pivot=arr[start];
+//     var swapIndx = start;
+//     for(var i=start+1;i<arr.length;i++){
+//         if(pivot > arr[i]){
+//             swapIndx++;
+            
+//         }
+//     }
+// }
+
+// console.log(pivotHelper([5,7,1,3,4]))
+
+
 function quickSort(arr){
 
-}
+    if(arr.length <2 ) return arr;
+    let pivot=arr[arr.length-1];
+    let left=[];
+    let right=[];
 
-
-function pivotHelper(arr,start=0,end=arr.length+1){
-   var pivot=arr[start];
-    var swapIndx = start;
-    for(var i=start+1;i<arr.length;i++){
-        if(pivot > arr[i]){
-            swapIndx++;
-            
+    for(var i=0;i<arr.length-1;i++){
+        if(arr[i]< pivot){
+            left.push(arr[i])
+        }else{
+            right.push(arr[i])
         }
     }
-}
 
-console.log(pivotHelper([5,7,1,3,4]))
+    return [...quickSort(left), pivot, ...quickSort(right)]
+} 
+
+console.log(quickSort([2,6,1,8,4,5]))
