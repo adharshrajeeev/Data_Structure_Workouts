@@ -34,17 +34,41 @@ class HashTable{
         }
     }
 
+    getCollision(key){
+        const index=this.hash(key);
+
+        const bucket=this.table[index];
+
+        if(bucket){
+            const sameKeyItem=bucket.find(item => item[0] == key);
+            if(sameKeyItem){
+                return sameKeyItem[1]
+            }
+        }
+        return undefined
+    }
+
+    setCollission(key,value){
+        const index=this.hash(key)
+        const bucket=this.table[index];
+        if(bucket){
+          this.table[index]=[[key,value]]
+        }else{
+            const sameKeyItem=bucket.find(item => item[0] === key);
+            if(sameKeyItem){
+                sameKeyItem[1]=value
+            }else{
+                bucket.push([key,value])
+            }
+        }
+    }
+
 }
 
 
 const table=new HashTable(50);
 
 table.set("name","adharsh");
-table.set("age","72");
+table.set("age",22);
 
-//table.display();
-// table.remove("name")
-
-// console.log(table.get("name"));
-
-
+table.display()
