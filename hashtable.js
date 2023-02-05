@@ -71,4 +71,8 @@ const table=new HashTable(50);
 table.set("name","adharsh");
 table.set("age",22);
 
+
+console.log(table.get("age"))
 table.display()
+
+

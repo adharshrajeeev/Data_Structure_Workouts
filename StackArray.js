@@ -18,6 +18,6 @@ function deleteMiddle(stack){
     
 }
 
-console.log(deleteMiddle(stack))
+
 
 
