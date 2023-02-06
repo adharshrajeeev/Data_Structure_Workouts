@@ -69,8 +69,6 @@ function quickSort(arr){
             right.push(arr[i])
         }
     }
-    let newleft=left;
-    let newRiht=right
 
     return [...quickSort(left),pivot,...quickSort(right)]
 }

@@ -41,10 +41,10 @@ function insertionSort(arr){
 
          for(var j=i-1;arr[j] > key && j>=0;j--){
              arr[j+1]=arr[j]
-             var neqarr=arr
+             
          }
          arr[j+1]=key;
-         var newww=arr
+         
      }
  
      return arr;

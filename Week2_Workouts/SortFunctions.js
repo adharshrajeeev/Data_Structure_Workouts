@@ -51,9 +51,7 @@ function insertionSort(arr){
 // console.log(insertionSort(newArray))
 
 const merge=(arr1,arr2)=>{
-    console.log(arr1,"array 1");
-    console.log(arr2,"array 2");
-    console.log("<====================>")
+   
     let result=[];
     let i=0;
     let j=0;
@@ -85,14 +83,14 @@ function mergeSort(arr){
 
     let middle=Math.floor(arr.length/2);
     let left=mergeSort(arr.slice(0,middle));
-    console.log(left,"left array")  
+ 
     let right=mergeSort(arr.slice(middle));
-    console.log(right,"right array")  
+ 
     
     return merge(left,right)
 }
 
-// console.log(mergeSort([2,4,1,3]),"FINAL ARRAY")
+console.log(mergeSort([2,4,1,3]),"FINAL ARRAY")
 
 
 
@@ -130,3 +128,31 @@ function quickSort(arr){
 } 
 
 console.log(quickSort([2,6,1,8,4,5]))
+
+// MERGE SORT CODEVOLUTION //
+var sampleArry=[8,20,-2,4,-6]
+
+function mergeSort(arr){
+    if(arr.length < 2 ) return arr
+    
+    const mid=Math.floor(arr.length/2);
+    const leftarry=arr.slice(0,mid);
+    const rightArry=arr.slice(mid);
+   return merge(mergeSort(leftarry),mergeSort(rightArry))
+}
+
+
+function merge(leftarry,rightarry){
+    const sortArry=[];
+    while(leftarry.length && rightarry.length){
+        if(leftarry[0] <= rightarry[0]){
+            sortArry.push(leftarry.shift());
+        }else{
+            sortArry.push(rightarry.shift())
+        }
+    }
+    // console.log(sortArry,"sortarry",leftarry,"left array",rightarry,"rightarry")
+  return  [...sortArry,...leftarry,...rightarry]
+}
+
+console.log(mergeSort([8,20,-2,4,-6]))
