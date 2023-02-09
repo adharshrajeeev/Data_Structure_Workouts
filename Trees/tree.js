@@ -110,6 +110,35 @@ class BinarySearchTree{          //        10
         traverse(current);
         return data;
     }
+
+    minValue(root){
+        var minv=root.value;
+        while(root.left != null){
+            minv =  root.left.value;
+            root =  root.left;
+        }
+        return minv
+    }
+
+    deleteBinarySearchTree(root,key){
+      if(root ==  null){
+        return root;
+      }
+
+      if(key < root.value){
+        root.left=deleteBinarySearchTree(root.left,key)
+      }else if( key > root.value){
+        root.right=deleteBinarySearchTree(root.right,key)
+      }else{
+        if(root.left ===  null){
+            return root.right
+        }else if(root.right == null){
+            return root.left
+        }
+        root.value=minValue(root.right);
+        root.right=deleteBinarySearchTree(root.right,root.value)
+      }
+    }
 }
 
 
@@ -129,6 +158,8 @@ tree.insert(23);
 // console.log(tree.depthFirstSearchPostOrder());
 
 
+console.log(tree.depthFirstSearchInOrder());
+tree.deleteBinarySearchTree(this.root,10)
 console.log(tree.depthFirstSearchInOrder());
 
 
