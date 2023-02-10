@@ -154,12 +154,12 @@ tree.insert(23);
 // console.log(tree.breadthFirstSearch())
 // console.log(JSON.stringify(tree))
 
-// console.log(tree.depthFirstSearchPreOrder());
-// console.log(tree.depthFirstSearchPostOrder());
+console.log(tree.depthFirstSearchPreOrder());
+console.log(tree.depthFirstSearchPostOrder());
 
 
-console.log(tree.depthFirstSearchInOrder());
-tree.deleteBinarySearchTree(this.root,10)
-console.log(tree.depthFirstSearchInOrder());
+// console.log(tree.depthFirstSearchInOrder());
+// tree.deleteBinarySearchTree(this.root,10)
+// console.log(tree.depthFirstSearchInOrder());
 
 
