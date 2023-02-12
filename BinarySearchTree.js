@@ -192,6 +192,8 @@ class BinarySearchTree{
         traverse(current);
         return data
     }
+
+    
 }
 
 const tree=new BinarySearchTree();
