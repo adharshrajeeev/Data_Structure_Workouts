@@ -23,6 +23,26 @@ class Grapgh{
             v=>v!==v1
         )
     }
+
+    debthFirstSearch(start){
+       const stack=[start];
+       const result=[];
+       const visited={};
+       visited[start]=true;
+       let currentVertex
+       while(stack.length){
+       currentVertex=stack.pop();
+        result.push(currentVertex);
+
+        this.adjacencyList[currentVertex].forEach(neighbor => {
+            if(!visited[neighbor]){
+                visited[neighbor]=true;
+                stack.push(neighbor)
+            }
+        });
+       }
+       return result
+    }
 }
 
 const g=new Grapgh();
@@ -33,6 +53,6 @@ g.addVertex("SanFransisco")
 
 
 g.addEdge("tokyo","malasia")
-console.log(g);
-g.removeEdge("tokyo","malasia");
-console.log(g)
+g.addEdge("malasia","luthiyana")
+g.addEdge("tokyo","SanFransisco")
+console.log(g.debthFirstSearch("tokyo"))
